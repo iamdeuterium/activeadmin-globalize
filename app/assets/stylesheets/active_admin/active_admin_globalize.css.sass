@@ -1,6 +1,38 @@
 @import "active_admin/mixins"
 
 .active_admin
+  .available-locales-switch
+    display: inline-block
+    margin-left: 20%
+    margin-bottom: -10px
+    li
+      padding-left: 10px
+      float: left
+      display: inline-block
+      a.locale-current
+        font-weight: bold !important
+
+  .inputs legend .available-locales-switch
+    float: right
+    li
+      float: left
+      padding-left: 10px
+      a
+        font-weight: normal
+
+  .activeadmin-translation-input
+
+
+    .locale
+      &.locale-current
+        display: block
+      clear: both
+      display: none
+      padding-top: 0
+
+    fieldset
+      margin-bottom: 0
+
   .activeadmin-translations
     margin-bottom: 20px
 

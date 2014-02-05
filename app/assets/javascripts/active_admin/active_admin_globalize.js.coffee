@@ -1,7 +1,20 @@
 $ ->
+  $(".available-locales-switch a").on 'click', (e) ->
+    $container = if $(this).closest('legend').length > 0
+      $(this).parents('fieldset')
+    else
+      $(this).parents('.activeadmin-translation-input')
+
+    $container.find("fieldset").hide()
+    $container.find("fieldset" + $(this).attr('href')).show()
+
+    $container.find('.available-locales-switch a').removeClass('locale-current')
+    $(this).addClass('locale-current')
+
+    e.preventDefault()
+
 
   translations = ->
-
     $(".activeadmin-translations > ul").each ->
       $dom = $(this)
       if !$dom.data("ready")

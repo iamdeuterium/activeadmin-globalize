@@ -1,6 +1,10 @@
 require 'globalize'
 require 'activeadmin'
 
+module Activeadmin::Globalize
+
+end
+
 require 'active_admin/views/index_as_table'
 require 'active_admin/globalize/engine'
 require 'active_admin/globalize/form_builder_extension'

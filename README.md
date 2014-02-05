@@ -35,6 +35,27 @@ form do |f|
   end
   # ...
 end
+
+form do |f|
+  # ...
+  f.inputs do |t|
+    t.translated_input  :title
+    t.translated_input  :content
+    t.input             :not_translated_field
+  end
+  # ...
+end
+
+form do |f|
+  # ...
+  f.inputs_with_translations do |t|
+    t.translated_input  :title
+    t.translated_input  :content
+    t.input             :not_translated_field
+  end
+  # ...
+end
+
 ```
 If `switch_locale` is set, each tab will be rendered switching locale.
 
