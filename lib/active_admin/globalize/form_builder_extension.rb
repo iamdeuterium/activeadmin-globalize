@@ -48,6 +48,14 @@ module ActiveAdmin
         inputs(*args, &block)
       end
 
+      def input(method, *args)
+        if object.class.respond_to?(:translated?) and object.translated?(method)
+          translated_input(method, *args)
+        else
+          super
+        end
+      end
+
       def translated_input(method, *args)
         options = args.extract_options!
         options.reverse_merge! label: translated_input_label(method)
