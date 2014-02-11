@@ -5,8 +5,8 @@ $ ->
     else
       $(this).parents('.activeadmin-translation-input')
 
-    $container.find("fieldset").hide()
-    $container.find("fieldset" + $(this).attr('href')).show()
+    $container.find("fieldset.locale").hide()
+    $container.find("fieldset.locale" + $(this).attr('href')).show()
 
     $container.find('.available-locales-switch a').removeClass('locale-current')
     $(this).addClass('locale-current')
